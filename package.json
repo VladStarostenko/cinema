@@ -4,9 +4,12 @@
     "private": true,
     "license": "UNLICENSED",
     "scripts": {
-        "start": "concurrently -n \"SER,CLI\" -c \"bgGreen,bgBlue\" \"yarn server\" \"yarn client\"",
-        "client": "yarn workspace client run start",
-        "server": "yarn workspace server run start",
+        "start": "concurrently -n \"SER,CLI\" -c \"bgGreen,bgBlue\" \"yarn startServer\" \"yarn startClient\"",
+        "startClient": "yarn workspace client run start",
+        "startServer": "yarn workspace server run start",
+        "build": "concurrently -n \"SER,CLI\" -c \"bgGreen,bgBlue\" \"yarn buildServer\" \"yarn buildClient\"",
+        "buildClient": "yarn workspace client run build",
+        "buildServer": "yarn workspace server run build",
         "lint": "eslint ./packages/*/src/**/*.{js,jsx,ts,tsx}"
     },
     "workspaces": [
