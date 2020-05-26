@@ -1,0 +1,29 @@
+{
+    "name": "cinema-monorepo",
+    "version": "0.1.0",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+        "start": "concurrently -n \"SER,CLI\" -c \"bgGreen,bgBlue\" \"yarn server\" \"yarn client\"",
+        "client": "yarn workspace client run start",
+        "server": "yarn workspace server run start",
+        "lint": "eslint ./packages/*/src/**/*.{js,jsx,ts,tsx}"
+    },
+    "workspaces": [
+        "packages/*"
+    ],
+    "devDependencies": {
+        "@types/node": "^13.7.0",
+        "@typescript-eslint/eslint-plugin": "^2.19.0",
+        "@typescript-eslint/parser": "^2.19.0",
+        "concurrently": "^5.1.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-plugin-react": "^7.18.3",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-config-react-app": "^5.2.1",
+        "ts-node": "^8.6.2",
+        "ts-node-dev": "^1.0.0-pre.44",
+        "typescript": "^3.7.5"
+    }
+}
