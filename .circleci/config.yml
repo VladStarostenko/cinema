@@ -38,7 +38,7 @@ jobs:
       - setup_remote_docker
       - install_dependencies:
           key: 11
-      - run: yarn build
+      - run: yarn start
 
 workflows:
   cinema_all:
